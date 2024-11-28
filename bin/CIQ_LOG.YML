@@ -1,0 +1,35 @@
+
+---
+Error: Symbol Not Found Error
+Details: "Could not find symbol 'Storage'"
+Time: 2024-11-28T10:27:39Z
+Part-Number: 006-B4315-00
+Firmware-Version: '21.19'
+Language-Code: eng
+ConnectIQ-Version: 4.2.4
+Filename: AbsolutSweatDatafield
+Appname: ABS
+Stack: 
+  - pc: 0x1000030d
+    File: /Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc
+    Line: 29
+    Function: onScanResults
+---
+Error: Unexpected Type Error
+Details: 'Failed invoking <symbol>'
+Time: 2024-11-28T10:29:34Z
+Part-Number: 006-B4315-00
+Firmware-Version: '21.19'
+Language-Code: eng
+ConnectIQ-Version: 4.2.4
+Filename: AbsolutSweatDatafield
+Appname: ABS
+Stack: 
+  - pc: 0x100005e8
+    File: /Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc
+    Line: 58
+    Function: procConnection
+  - pc: 0x1000020c
+    File: /Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc
+    Line: 89
+    Function: onConnectedStateChanged

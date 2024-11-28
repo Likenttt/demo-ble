@@ -1,0 +1,111 @@
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 7; ]
+import Toybox.BluetoothLowEnergy;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 8; ]
+import Toybox.System;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 10; ]
+class ProfileManager{
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 10; ]
+    <init> {
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" 11 15 ]
+        %tmp.1 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.2 = getv function %tmp.1 :stringToUuid;
+        %tmp.3 = "0000190A-0000-1000-8000-00805F9B34FB";
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        putv self :BROADCAST_SERVICE %tmp.4;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" 15 15 ]
+        %tmp.5 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.6 = getv function %tmp.5 :stringToUuid;
+        %tmp.7 = "6E400001-B5A3-F393-E0A9-E50E24DCCA00";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        putv self :DATA_SENDING_SERVICE %tmp.8;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" 19 15 ]
+        %tmp.9 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.10 = getv function %tmp.9 :stringToUuid;
+        %tmp.11 = "6E400002-B5A3-F393-E0A9-E50E24DCCA00";
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        putv self :DATA_SENDING_CHARACTERISTIC %tmp.12;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" 23 15 ]
+        %tmp.13 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.14 = getv function %tmp.13 :stringToUuid;
+        %tmp.15 = "6E400003-B5A3-F393-E0A9-E50E24DCCA00";
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        putv self :DATA_RECEIVING_CHARACTERISTIC %tmp.16;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" 27 16 ]
+        %tmp.17 = newd 2;
+        %tmp.19 = const :uuid;
+        %tmp.21 = getv ? :DATA_SENDING_SERVICE;
+        %tmp.22 = dup %tmp.17;
+        %tmp.23 = aputv %tmp.22 %tmp.19 %tmp.21;
+        %tmp.25 = const :characteristics;
+        %tmp.26 = newa 2;
+        %tmp.27 = newd 2;
+        %tmp.29 = const :uuid;
+        %tmp.31 = getv ? :DATA_SENDING_CHARACTERISTIC;
+        %tmp.32 = dup %tmp.27;
+        %tmp.33 = aputv %tmp.32 %tmp.29 %tmp.31;
+        %tmp.35 = const :descriptors;
+        %tmp.36 = newa 1;
+        %tmp.37 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.38 = getv function %tmp.37 :cccdUuid;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        %tmp.40 = dup %tmp.36;
+        %tmp.41 = aputv %tmp.40 0 %tmp.39;
+        %tmp.42 = dup %tmp.33;
+        %tmp.43 = aputv %tmp.42 %tmp.35 %tmp.41;
+        %tmp.44 = dup %tmp.26;
+        %tmp.45 = aputv %tmp.44 0 %tmp.43;
+        %tmp.46 = newd 2;
+        %tmp.48 = const :uuid;
+        %tmp.50 = getv ? :DATA_RECEIVING_CHARACTERISTIC;
+        %tmp.51 = dup %tmp.46;
+        %tmp.52 = aputv %tmp.51 %tmp.48 %tmp.50;
+        %tmp.54 = const :descriptors;
+        %tmp.55 = newa 1;
+        %tmp.56 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.57 = getv function %tmp.56 :cccdUuid;
+        %tmp.58 = invoke %tmp.56 %tmp.57();
+        %tmp.59 = dup %tmp.55;
+        %tmp.60 = aputv %tmp.59 0 %tmp.58;
+        %tmp.61 = dup %tmp.52;
+        %tmp.62 = aputv %tmp.61 %tmp.54 %tmp.60;
+        %tmp.63 = dup %tmp.45;
+        %tmp.64 = aputv %tmp.63 1 %tmp.62;
+        %tmp.65 = dup %tmp.23;
+        %tmp.66 = aputv %tmp.65 %tmp.25 %tmp.64;
+        putv self :_dataSendingProfileDef %tmp.66;
+    }
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 10; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 11; @position = 15; ]
+    public
+    const BROADCAST_SERVICE;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 15; @position = 15; ]
+    public
+    const DATA_SENDING_SERVICE;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 19; @position = 15; ]
+    public
+    const DATA_SENDING_CHARACTERISTIC;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 23; @position = 15; ]
+    public
+    const DATA_RECEIVING_CHARACTERISTIC;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 27; @position = 16; ]
+    private
+    const _dataSendingProfileDef;
+    //! Register the bluetooth profile
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 42; ]
+    public
+    function registerProfiles() as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ProfileManager_mc_42_45_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" 43 4 ]
+        %tmp.1 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.2 = getv function %tmp.1 :registerProfile;
+        %tmp.4 = getv ? :_dataSendingProfileDef;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ProfileManager_mc_42_45_stop:
+    }
+}
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc"; @line = 7; ]
+<init> {
+}

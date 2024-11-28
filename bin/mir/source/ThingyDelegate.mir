@@ -1,0 +1,500 @@
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 7; ]
+import Toybox.BluetoothLowEnergy;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 8; ]
+import Toybox.Lang;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 10; ]
+class ThingyDelegate extends BluetoothLowEnergy.BleDelegate{
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 10; ]
+    <init> {
+    }
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 10; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 11; @position = 14; ]
+    private
+    var _profileManager as ProfileManager;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 13; @position = 14; ]
+    private
+    var _onScanResult as WeakReference or Null;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 14; @position = 14; ]
+    private
+    var _onConnection as WeakReference or Null;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 15; @position = 14; ]
+    private
+    var _onCharWrite as WeakReference or Null;
+    //! Constructor
+    //! @param profileManager The profile manager
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 19; ]
+    public
+    function initialize(profileManager as ProfileManager) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_19_63_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 20 4 ]
+        %tmp.2 = getv ? :BleDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 21 4 ]
+        %tmp.5 = lgetv %profileManager;
+        putv self :_profileManager %tmp.5;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_19_63_stop:
+    }
+    //! Handle new Scan Results being received
+    //! @param scanResults An iterator of new scan result objects
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 26; ]
+    public
+    function onScanResults(scanResults as Iterator) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_26_65_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 27 4 ]
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_26_65_start" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_26_65_stop" ]
+        %maxRssiResult.1 = local;
+        %tmp.1 = null;
+        lputv %maxRssiResult.1 %tmp.1;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 28 4 ]
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_26_65_start" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_26_65_stop" ]
+        %maxRssi.2 = local;
+        %tmp.2 = -99999;
+        lputv %maxRssi.2 %tmp.2;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 30 4 ]
+        for @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_test @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_incr @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_init:
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_begin" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_end" ]
+        %result.3 = local;
+        %tmp.3 = lgetv %scanResults;
+        %tmp.4 = getv function %tmp.3 :next;
+        %tmp.5 = invoke %tmp.3 %tmp.4();
+        lputv %result.3 %tmp.5;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_test:
+        %tmp.7 = lgetv %result.3;
+        %tmp.8 = null;
+        %tmp.9 = ne %tmp.7 %tmp.8;
+        bf %tmp.9 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_begin:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_34_6_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 37 6 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_6_if_stmt:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_10_begin:
+        %tmp.11 = lgetv %result.3;
+        %tmp.12 = as %tmp.11 { (!Null) };
+        %tmp.14 = getv ? :ScanResult;
+        %tmp.15 = isa %tmp.12 %tmp.14;
+        %tmp.16 = dup %tmp.15;
+        bf %tmp.16 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_42_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_42_true:
+        %tmp.17 = lgetv %result.3;
+        %tmp.18 = as %tmp.17 { (ScanResult) && (!Null) };
+        %tmp.19 = getv function %tmp.18 :getRssi;
+        %tmp.20 = invoke %tmp.18 %tmp.19();
+        %tmp.21 = -80;
+        %tmp.22 = gt %tmp.20 %tmp.21;
+        %tmp.23 = and %tmp.15 %tmp.22;
+        push %tmp.23;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_42_end:
+        %tmp.24 = phi [%tmp.16 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_10_begin] [%tmp.23 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_42_true] [%tmp.24 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_42_end];
+        bf %tmp.24 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_6_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_66_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 38 8 ]
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_66_start" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_66_stop" ]
+        %uuids.4 = local;
+        %tmp.25 = lgetv %result.3;
+        %tmp.26 = as %tmp.25 { (ScanResult) && (!Null) };
+        %tmp.27 = getv function %tmp.26 :getServiceUuids;
+        %tmp.28 = invoke %tmp.26 %tmp.27();
+        lputv %uuids.4 %tmp.28;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 42 8 ]
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_66_start" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_66_stop" ]
+        %rssi.5 = local;
+        %tmp.29 = lgetv %result.3;
+        %tmp.30 = as %tmp.29 { (ScanResult) && (!Null) };
+        %tmp.31 = getv function %tmp.30 :getRssi;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        lputv %rssi.5 %tmp.32;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 44 8 ]
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_66_start" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_66_stop" ]
+        %hasAbsolutSweatBroadcast.6 = local;
+        %tmp.33 = false;
+        lputv %hasAbsolutSweatBroadcast.6 %tmp.33;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 45 8 ]
+        for @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_test @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_incr @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_init:
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_begin" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_end" ]
+        %uuid.7 = local;
+        %tmp.34 = lgetv %uuids.4;
+        %tmp.35 = getv function %tmp.34 :next;
+        %tmp.36 = invoke %tmp.34 %tmp.35();
+        lputv %uuid.7 %tmp.36;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_test:
+        %tmp.38 = lgetv %uuid.7;
+        %tmp.39 = null;
+        %tmp.40 = ne %tmp.38 %tmp.39;
+        bf %tmp.40 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_begin:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_73_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 46 10 ]
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_73_start" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_73_stop" ]
+        %uuidString.8 = local;
+        %tmp.41 = lgetv %uuid.7;
+        %tmp.42 = as %tmp.41 { (!Null) };
+        %tmp.43 = getv function %tmp.42 :toString;
+        %tmp.44 = invoke %tmp.42 %tmp.43();
+        lputv %uuidString.8 %tmp.44;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 48 10 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_48_10_if_stmt:
+        %tmp.45 = "0000190A-0000-1000-8000-00805F9B34FB";
+        %tmp.46 = getv function %tmp.45 :equals;
+        %tmp.48 = lgetv %uuidString.8;
+        %tmp.49 = invoke %tmp.45 %tmp.46(%tmp.48);
+        bf %tmp.49 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_48_10_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_48_10_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_48_73_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 49 12 ]
+        %tmp.50 = true;
+        lputv %hasAbsolutSweatBroadcast.6 %tmp.50;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_48_73_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_48_10_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_48_10_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_73_stop:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_incr:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 45 ]
+        %tmp.51 = lgetv %uuids.4;
+        %tmp.52 = getv function %tmp.51 :next;
+        %tmp.53 = invoke %tmp.51 %tmp.52();
+        lputv %uuid.7 %tmp.53;
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_test;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_45_8_for_end:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 53 8 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_53_8_if_stmt:
+        %tmp.55 = lgetv %hasAbsolutSweatBroadcast.6;
+        bf %tmp.55 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_53_8_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_53_8_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_53_38_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 55 10 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_55_10_if_stmt:
+        %tmp.57 = lgetv %rssi.5;
+        %tmp.59 = lgetv %maxRssi.2;
+        %tmp.60 = gt %tmp.57 %tmp.59;
+        bf %tmp.60 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_55_10_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_55_10_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_55_30_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 56 12 ]
+        %tmp.62 = lgetv %rssi.5;
+        lputv %maxRssi.2 %tmp.62;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 57 12 ]
+        %tmp.64 = lgetv %result.3;
+        %tmp.65 = as %tmp.64 { (ScanResult) && (!Null) };
+        lputv %maxRssiResult.1 %tmp.65;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_55_30_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_55_10_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_55_10_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_53_38_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_53_8_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_53_8_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_66_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_37_6_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_34_6_stop:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_incr:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 33 ]
+        %tmp.66 = lgetv %scanResults;
+        %tmp.67 = getv function %tmp.66 :next;
+        %tmp.68 = invoke %tmp.66 %tmp.67();
+        lputv %result.3 %tmp.68;
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_test;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_30_4_for_end:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 64 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_64_4_if_stmt:
+        %tmp.70 = lgetv %maxRssiResult.1;
+        %tmp.71 = null;
+        %tmp.72 = ne %tmp.70 %tmp.71;
+        bf %tmp.72 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_64_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_64_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_64_31_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 65 6 ]
+        %tmp.73 = self;
+        %tmp.74 = getv function %tmp.73 :processPairing;
+        %tmp.76 = lgetv %maxRssiResult.1;
+        %tmp.77 = as %tmp.76 { (!Null) };
+        invoke %tmp.73 %tmp.74(%tmp.77);
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_64_31_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_64_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_64_4_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_26_65_stop:
+    }
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 71; ]
+    private
+    function processPairing(scanResult as ScanResult) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_71_68_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 72 4 ]
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_71_68_start" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_71_68_stop" ]
+        %onScanResult.1 = local;
+        %tmp.2 = getv ? :_onScanResult;
+        lputv %onScanResult.1 %tmp.2;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 73 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_73_4_if_stmt:
+        %tmp.4 = lgetv %onScanResult.1;
+        %tmp.5 = null;
+        %tmp.6 = ne %tmp.4 %tmp.5;
+        bf %tmp.6 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_73_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_73_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_73_30_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 74 6 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_74_6_if_stmt:
+        %tmp.7 = lgetv %onScanResult.1;
+        %tmp.8 = as %tmp.7 { (!Null) };
+        %tmp.9 = getv function %tmp.8 :stillAlive;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        bf %tmp.10 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_74_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_74_6_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_74_37_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 75 8 ]
+        %tmp.11 = lgetv %onScanResult.1;
+        %tmp.12 = as %tmp.11 { (!Null) };
+        %tmp.13 = getv function %tmp.12 :get;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = as %tmp.14 DeviceManager;
+        %tmp.16 = getv function %tmp.15 :procScanResult;
+        %tmp.18 = lgetv %scanResult;
+        invoke %tmp.15 %tmp.16(%tmp.18);
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_74_37_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_74_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_74_6_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_73_30_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_73_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_73_4_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_71_68_stop:
+    }
+    //! Handle pairing and connecting to a device
+    //! @param device The device state that was changed
+    //! @param state The state of the connection
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 82; ]
+    public
+    function onConnectedStateChanged(device as Device, state as ConnectionState) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_85_12_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 86 4 ]
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_85_12_start" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_85_12_stop" ]
+        %onConnection.1 = local;
+        %tmp.2 = getv ? :_onConnection;
+        lputv %onConnection.1 %tmp.2;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 87 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_87_4_if_stmt:
+        %tmp.4 = lgetv %onConnection.1;
+        %tmp.5 = null;
+        %tmp.6 = ne %tmp.4 %tmp.5;
+        bf %tmp.6 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_87_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_87_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_87_30_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 88 6 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_88_6_if_stmt:
+        %tmp.7 = lgetv %onConnection.1;
+        %tmp.8 = as %tmp.7 { (!Null) };
+        %tmp.9 = getv function %tmp.8 :stillAlive;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        bf %tmp.10 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_88_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_88_6_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_88_37_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 89 8 ]
+        %tmp.11 = lgetv %onConnection.1;
+        %tmp.12 = as %tmp.11 { (!Null) };
+        %tmp.13 = getv function %tmp.12 :get;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = as %tmp.14 DeviceManager;
+        %tmp.16 = getv function %tmp.15 :procConnection;
+        %tmp.18 = lgetv %device;
+        invoke %tmp.15 %tmp.16(%tmp.18);
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_88_37_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_88_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_88_6_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_87_30_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_87_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_87_4_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_85_12_stop:
+    }
+    //! Handle the completion of a write operation on a characteristic
+    //! @param characteristic The characteristic that was written
+    //! @param status The BluetoothLowEnergy status indicating the result of the operation
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 97; ]
+    public
+    function onCharacteristicWrite(characteristic as Characteristic, status as Status) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_100_12_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 101 4 ]
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_100_12_start" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_100_12_stop" ]
+        %onCharWrite.1 = local;
+        %tmp.2 = getv ? :_onCharWrite;
+        lputv %onCharWrite.1 %tmp.2;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 102 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_102_4_if_stmt:
+        %tmp.4 = lgetv %onCharWrite.1;
+        %tmp.5 = null;
+        %tmp.6 = ne %tmp.4 %tmp.5;
+        bf %tmp.6 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_102_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_102_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_102_29_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 103 6 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_103_6_if_stmt:
+        %tmp.7 = lgetv %onCharWrite.1;
+        %tmp.8 = as %tmp.7 { (!Null) };
+        %tmp.9 = getv function %tmp.8 :stillAlive;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        bf %tmp.10 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_103_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_103_6_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_103_36_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 104 8 ]
+        %tmp.11 = lgetv %onCharWrite.1;
+        %tmp.12 = as %tmp.11 { (!Null) };
+        %tmp.13 = getv function %tmp.12 :get;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = as %tmp.14 DeviceManager;
+        %tmp.16 = getv function %tmp.15 :procCharWrite;
+        %tmp.18 = lgetv %characteristic;
+        %tmp.20 = lgetv %status;
+        invoke %tmp.15 %tmp.16(%tmp.18, %tmp.20);
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_103_36_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_103_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_103_6_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_102_29_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_102_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_102_4_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_100_12_stop:
+    }
+    //! Store a new manager to manage scan results
+    //! @param manager The manager of the scan results
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 114; ]
+    public
+    function notifyScanResult(manager as DeviceManager) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_114_69_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 115 4 ]
+        %tmp.1 = lgetv %manager;
+        %tmp.2 = getv function %tmp.1 :weak;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        putv self :_onScanResult %tmp.3;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_114_69_stop:
+    }
+    //! Store a new manager to manage device connections
+    //! @param manager The manager for devices
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 120; ]
+    public
+    function notifyConnection(manager as DeviceManager) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_120_69_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 121 4 ]
+        %tmp.1 = lgetv %manager;
+        %tmp.2 = getv function %tmp.1 :weak;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        putv self :_onConnection %tmp.3;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_120_69_stop:
+    }
+    //! Store a new manager to handle characteristic writes
+    //! @param manager The manager for characteristics
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 126; ]
+    public
+    function notifyCharWrite(manager as DeviceManager) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_126_68_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 127 4 ]
+        %tmp.1 = lgetv %manager;
+        %tmp.2 = getv function %tmp.1 :weak;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        putv self :_onCharWrite %tmp.3;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_126_68_stop:
+    }
+    //! Broadcast a new scan result
+    //! @param scanResult The new scan result
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 132; ]
+    private
+    function broadcastScanResult(scanResult as ScanResult) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_132_73_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 133 4 ]
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_132_73_start" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_132_73_stop" ]
+        %onScanResult.1 = local;
+        %tmp.2 = getv ? :_onScanResult;
+        lputv %onScanResult.1 %tmp.2;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 134 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_134_4_if_stmt:
+        %tmp.4 = lgetv %onScanResult.1;
+        %tmp.5 = null;
+        %tmp.6 = ne %tmp.4 %tmp.5;
+        bf %tmp.6 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_134_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_134_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_134_30_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 135 6 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_135_6_if_stmt:
+        %tmp.7 = lgetv %onScanResult.1;
+        %tmp.8 = as %tmp.7 { (!Null) };
+        %tmp.9 = getv function %tmp.8 :stillAlive;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        bf %tmp.10 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_135_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_135_6_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_135_37_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 136 8 ]
+        %tmp.11 = lgetv %onScanResult.1;
+        %tmp.12 = as %tmp.11 { (!Null) };
+        %tmp.13 = getv function %tmp.12 :get;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = as %tmp.14 DeviceManager;
+        %tmp.16 = getv function %tmp.15 :procScanResult;
+        %tmp.18 = lgetv %scanResult;
+        invoke %tmp.15 %tmp.16(%tmp.18);
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_135_37_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_135_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_135_6_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_134_30_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_134_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_134_4_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_132_73_stop:
+    }
+    //! Get whether the iterator contains a specific uuid
+    //! @param iter Iterator of uuid objects
+    //! @param obj Uuid to search for
+    //! @return true if object found, false otherwise
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 145; ]
+    private
+    function contains(iter as Iterator, obj as Uuid) as Boolean {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_145_70_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 146 4 ]
+        for @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_test @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_incr @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_init:
+        [ "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_begin" "_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_end" ]
+        %uuid.1 = local;
+        %tmp.1 = lgetv %iter;
+        %tmp.2 = getv function %tmp.1 :next;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %uuid.1 %tmp.3;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_test:
+        %tmp.5 = lgetv %uuid.1;
+        %tmp.6 = null;
+        %tmp.7 = ne %tmp.5 %tmp.6;
+        bf %tmp.7 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_begin:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_67_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 147 6 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_147_6_if_stmt:
+        %tmp.8 = lgetv %uuid.1;
+        %tmp.9 = as %tmp.8 { (!Null) };
+        %tmp.10 = getv function %tmp.9 :equals;
+        %tmp.12 = lgetv %obj;
+        %tmp.13 = invoke %tmp.9 %tmp.10(%tmp.12);
+        bf %tmp.13 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_147_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_147_6_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_147_28_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 148 8 ]
+        %tmp.14 = true;
+        ret %tmp.14;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_147_28_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_147_6_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_147_6_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_67_stop:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_incr:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 146 ]
+        %tmp.15 = lgetv %iter;
+        %tmp.16 = getv function %tmp.15 :next;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        lputv %uuid.1 %tmp.17;
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_test;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_146_4_for_end:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" 152 4 ]
+        %tmp.18 = false;
+        ret %tmp.18;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ThingyDelegate_mc_145_70_stop:
+    }
+}
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc"; @line = 7; ]
+<init> {
+}

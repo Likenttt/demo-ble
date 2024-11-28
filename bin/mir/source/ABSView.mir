@@ -1,0 +1,67 @@
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 7; ]
+import Toybox.Activity;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 8; ]
+import Toybox.Lang;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 9; ]
+import Toybox.Time;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 10; ]
+import Toybox.WatchUi;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 12; ]
+class ABSView extends WatchUi.SimpleDataField{
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 12; ]
+    <init> {
+    }
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 12; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 13; @position = 14; ]
+    private
+    var _deviceManager as DeviceManager;
+    //! Set the label of the data field here
+    //! @param deviceManager The device manager
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 17; ]
+    public
+    function initialize(deviceManager as DeviceManager) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_17_61_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" 18 4 ]
+        %tmp.2 = getv ? :SimpleDataField;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" 19 4 ]
+        %tmp.4 = "Status";
+        putv self :label %tmp.4;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" 20 4 ]
+        %tmp.6 = lgetv %deviceManager;
+        putv self :_deviceManager %tmp.6;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_17_61_stop:
+    }
+    //! Play the sample every two seconds
+    //! @param info The updated Activity.Info object
+    //! @return Value to display in the data field
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 26; ]
+    public
+    function compute(info as Info) as Numeric or Duration or String or Null {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_28_45_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" 30 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_30_11_begin:
+        %tmp.2 = getv ? :_deviceManager;
+        %tmp.3 = getv function %tmp.2 :connected;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        bf %tmp.4 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_30_11_false;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_30_11_true:
+        %tmp.5 = "Connected";
+        push %tmp.5;
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_30_11_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_30_11_false:
+        %tmp.6 = "Disconnected";
+        push %tmp.6;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_30_11_end:
+        %tmp.7 = phi [%tmp.4 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_30_11_begin] [%tmp.5 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_30_11_true] [%tmp.6 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_30_11_false] [%tmp.7 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_30_11_end];
+        ret %tmp.7;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_ABSView_mc_28_45_stop:
+    }
+}
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc"; @line = 7; ]
+<init> {
+}

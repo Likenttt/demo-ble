@@ -1,0 +1,345 @@
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 7; ]
+import Toybox.BluetoothLowEnergy;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 8; ]
+import Toybox.Lang;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 9; ]
+import Toybox.System;
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 11; ]
+class DeviceManager{
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 11; ]
+    <init> {
+    }
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 11; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 12; @position = 14; ]
+    private
+    var _profileManager as ProfileManager;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 13; @position = 14; ]
+    private
+    var _device as Device or Null;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 14; @position = 14; ]
+    private
+    var _soundService as Service or Null;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 15; @position = 14; ]
+    private
+    var _config as Characteristic or Null;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 16; @position = 14; ]
+    private
+    var _speakerData as Characteristic or Null;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 17; @position = 14; ]
+    private
+    var _configComplete as Boolean = false;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 18; @position = 14; ]
+    private
+    var _sampleInProgress as Boolean = false;
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 19; @position = 14; ]
+    private
+    var _connected as Boolean = false;
+    //! Constructor
+    //! @param bleDelegate The BLE delegate
+    //! @param profileManager The profile manager
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 23; ]
+    public
+    function initialize(bleDelegate as ThingyDelegate, profileManager as ProfileManager) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_26_4_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 27 4 ]
+        %tmp.1 = null;
+        putv self :_device %tmp.1;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 29 4 ]
+        %tmp.2 = lgetv %bleDelegate;
+        %tmp.3 = getv function %tmp.2 :notifyScanResult;
+        %tmp.5 = lgetv %self;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 30 4 ]
+        %tmp.6 = lgetv %bleDelegate;
+        %tmp.7 = getv function %tmp.6 :notifyConnection;
+        %tmp.9 = lgetv %self;
+        invoke %tmp.6 %tmp.7(%tmp.9);
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 31 4 ]
+        %tmp.10 = lgetv %bleDelegate;
+        %tmp.11 = getv function %tmp.10 :notifyCharWrite;
+        %tmp.13 = lgetv %self;
+        invoke %tmp.10 %tmp.11(%tmp.13);
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 33 4 ]
+        %tmp.15 = lgetv %profileManager;
+        putv self :_profileManager %tmp.15;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_26_4_stop:
+    }
+    //! Start BLE scanning
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 37; ]
+    public
+    function start() as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_37_34_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 38 4 ]
+        %tmp.1 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.2 = getv function %tmp.1 :setScanState;
+        %tmp.3 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.4 = getv %tmp.3 :SCAN_STATE_SCANNING;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_37_34_stop:
+    }
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 41; ]
+    public
+    function connected() as Boolean {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_41_41_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 42 4 ]
+        %tmp.2 = getv ? :_device;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        ret %tmp.4;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_41_41_stop:
+    }
+    //! Process scan result
+    //! @param scanResult The scan result
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 47; ]
+    public
+    function procScanResult(scanResult as ScanResult) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_47_67_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 49 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_49_4_if_stmt:
+        %tmp.1 = lgetv %scanResult;
+        %tmp.2 = getv function %tmp.1 :getRssi;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = -50;
+        %tmp.5 = gt %tmp.3 %tmp.4;
+        bf %tmp.5 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_49_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_49_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_49_36_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 50 6 ]
+        %tmp.6 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.7 = getv function %tmp.6 :setScanState;
+        %tmp.8 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.9 = getv %tmp.8 :SCAN_STATE_OFF;
+        invoke %tmp.6 %tmp.7(%tmp.9);
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 51 6 ]
+        %tmp.10 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.11 = getv function %tmp.10 :pairDevice;
+        %tmp.13 = lgetv %scanResult;
+        %tmp.14 = invoke %tmp.10 %tmp.11(%tmp.13);
+        putv self :_device %tmp.14;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_49_36_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_49_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_49_4_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_47_67_stop:
+    }
+    //! Process a new device connection
+    //! @param device The device that was connected
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 57; ]
+    public
+    function procConnection(device as Device) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_57_59_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 58 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_4_if_stmt:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_8_begin:
+        %tmp.2 = getv ? :_device;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        %tmp.5 = dup %tmp.4;
+        bf %tmp.5 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_27_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_27_true:
+        %tmp.6 = lgetv %device;
+        %tmp.7 = getv function %tmp.6 :isConnected;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        %tmp.9 = and %tmp.4 %tmp.8;
+        push %tmp.9;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_27_end:
+        %tmp.10 = phi [%tmp.5 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_8_begin] [%tmp.9 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_27_true] [%tmp.10 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_27_end];
+        bf %tmp.10 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_4_if_false;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_49_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 59 6 ]
+        %tmp.12 = lgetv %device;
+        putv self :_device %tmp.12;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 60 6 ]
+        %tmp.13 = true;
+        putv self :_connected %tmp.13;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_49_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_4_if_false:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_62_11_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 63 6 ]
+        %tmp.14 = null;
+        putv self :_device %tmp.14;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 64 6 ]
+        %tmp.15 = false;
+        putv self :_connected %tmp.15;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 65 6 ]
+        %tmp.16 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.17 = getv function %tmp.16 :setScanState;
+        %tmp.18 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.19 = getv %tmp.18 :SCAN_STATE_SCANNING;
+        invoke %tmp.16 %tmp.17(%tmp.19);
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_62_11_stop:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_58_4_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_57_59_stop:
+    }
+    //! Handle the completion of a write operation on a characteristic
+    //! @param char The characteristic that was written
+    //! @param status The result of the operation
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 72; ]
+    public
+    function procCharWrite(char as Characteristic, status as Status) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_75_12_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 76 4 ]
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "Proc Write: (";
+        %tmp.4 = lgetv %char;
+        %tmp.5 = getv function %tmp.4 :getUuid;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.7 = add %tmp.3 %tmp.6;
+        %tmp.8 = ") - ";
+        %tmp.9 = add %tmp.7 %tmp.8;
+        %tmp.11 = lgetv %status;
+        %tmp.12 = add %tmp.9 %tmp.11;
+        invoke %tmp.1 %tmp.2(%tmp.12);
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 78 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_78_4_if_stmt:
+        %tmp.13 = lgetv %char;
+        %tmp.14 = getv function %tmp.13 :equals;
+        %tmp.16 = getv ? :_config;
+        %tmp.17 = invoke %tmp.13 %tmp.14(%tmp.16);
+        bf %tmp.17 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_78_4_if_false;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_78_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_78_30_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 79 6 ]
+        %tmp.18 = true;
+        putv self :_configComplete %tmp.18;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 80 6 ]
+        %tmp.19 = false;
+        putv self :_sampleInProgress %tmp.19;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_78_30_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_78_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_78_4_if_false:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 81 11 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_81_11_if_stmt:
+        %tmp.20 = lgetv %char;
+        %tmp.21 = getv function %tmp.20 :equals;
+        %tmp.23 = getv ? :_speakerData;
+        %tmp.24 = invoke %tmp.20 %tmp.21(%tmp.23);
+        bf %tmp.24 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_81_11_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_81_11_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_81_42_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 82 6 ]
+        %tmp.25 = false;
+        putv self :_sampleInProgress %tmp.25;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_81_42_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_81_11_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_81_11_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_78_4_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_75_12_stop:
+    }
+    //! Play the sample sound
+    //! @param sampleId Identifier of the sample
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 88; ]
+    public
+    function playSample(sampleId as Number) as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_88_57_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 89 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_4_if_stmt:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_8_begin:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_8_begin:
+        %tmp.1 = null;
+        %tmp.3 = getv ? :_device;
+        %tmp.4 = eq %tmp.1 %tmp.3;
+        %tmp.5 = dup %tmp.4;
+        bt %tmp.5 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_27_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_27_false:
+        %tmp.7 = getv ? :_configComplete;
+        %tmp.8 = not %tmp.7;
+        %tmp.9 = or %tmp.4 %tmp.8;
+        push %tmp.9;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_27_end:
+        %tmp.10 = phi [%tmp.5 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_8_begin] [%tmp.9 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_27_false] [%tmp.10 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_27_end];
+        %tmp.11 = dup %tmp.10;
+        bt %tmp.11 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_47_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_47_false:
+        %tmp.13 = getv ? :_sampleInProgress;
+        %tmp.14 = or %tmp.10 %tmp.13;
+        push %tmp.14;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_47_end:
+        %tmp.15 = phi [%tmp.11 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_8_begin] [%tmp.14 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_47_false] [%tmp.15 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_47_end];
+        bf %tmp.15 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_66_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 90 6 ]
+        ret ?;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_66_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_89_4_if_end:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 93 4 ]
+        %tmp.16 = true;
+        putv self :_sampleInProgress %tmp.16;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 94 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_94_4_if_stmt:
+        %tmp.18 = getv ? :_speakerData;
+        %tmp.19 = null;
+        %tmp.20 = ne %tmp.18 %tmp.19;
+        bf %tmp.20 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_94_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_94_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_94_30_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 95 6 ]
+        %tmp.22 = getv ? :_speakerData;
+        %tmp.23 = as %tmp.22 { (!Null) };
+        %tmp.24 = getv function %tmp.23 :requestWrite;
+        %tmp.25 = newba 1;
+        %tmp.27 = lgetv %sampleId;
+        %tmp.28 = dup %tmp.25;
+        %tmp.29 = aputv %tmp.28 0 %tmp.27;
+        %tmp.30 = newd 0;
+        invoke %tmp.23 %tmp.24(%tmp.29, %tmp.30);
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_94_30_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_94_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_94_4_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_88_57_stop:
+    }
+    //! Start the sound control on the device
+    [ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 100; ]
+    private
+    function startSoundControl() as Void {
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_100_47_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 101 4 ]
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "Start Sound";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 115 4 ]
+        %tmp.4 = false;
+        putv self :_configComplete %tmp.4;
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 116 4 ]
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_116_4_if_stmt:
+        %tmp.6 = getv ? :_config;
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_116_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_116_4_if_true:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_116_25_start:
+[ "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" 117 6 ]
+        %tmp.10 = getv ? :_config;
+        %tmp.11 = as %tmp.10 { (!Null) };
+        %tmp.12 = getv function %tmp.11 :requestWrite;
+        %tmp.13 = newba 2;
+        %tmp.14 = 0x03;
+        %tmp.15 = dup %tmp.13;
+        %tmp.16 = aputv %tmp.15 0 %tmp.14;
+        %tmp.17 = 0x01;
+        %tmp.18 = dup %tmp.16;
+        %tmp.19 = aputv %tmp.18 1 %tmp.17;
+        %tmp.20 = newd 1;
+        %tmp.22 = const :writeType;
+        %tmp.23 = getm $.Toybox.BluetoothLowEnergy;
+        %tmp.24 = getv %tmp.23 :WRITE_TYPE_WITH_RESPONSE;
+        %tmp.25 = dup %tmp.20;
+        %tmp.26 = aputv %tmp.25 %tmp.22 %tmp.24;
+        invoke %tmp.11 %tmp.12(%tmp.19, %tmp.26);
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_116_25_stop:
+        goto @_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_116_4_if_end;
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_116_4_if_end:
+_Users_kent_Downloads_NordicThingy52CoinCollector_source_DeviceManager_mc_100_47_stop:
+    }
+}
+[ @file = "/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc"; @line = 7; ]
+<init> {
+}

@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/Users/kent/Downloads/NordicThingy52CoinCollector/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" id="1" lineNum="11" parent="globals/ProfileManager" pc="268435457" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" id="1" lineNum="10" parent="globals/ProfileManager" pc="268435457" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" id="1" lineNum="15" parent="globals/ProfileManager" pc="268435485" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" id="1" lineNum="19" parent="globals/ProfileManager" pc="268435513" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" id="1" lineNum="23" parent="globals/ProfileManager" pc="268435541" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" id="1" lineNum="27" parent="globals/ProfileManager" pc="268435569" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" id="2" lineNum="42" parent="globals/ProfileManager" pc="268435748" symbol="registerProfiles"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ProfileManager.mc" id="2" lineNum="43" parent="globals/ProfileManager" pc="268435750" symbol="registerProfiles"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/bin/gen/006-B4315-00/source/Rez.mcgen" id="4" lineNum="7" parent="globals/Rez" pc="268435775" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="5" lineNum="10" parent="globals/ThingyDelegate" pc="268435799" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="6" lineNum="120" parent="globals/ThingyDelegate" pc="268435818" symbol="notifyConnection"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="6" lineNum="121" parent="globals/ThingyDelegate" pc="268435820" symbol="notifyConnection"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="7" lineNum="114" parent="globals/ThingyDelegate" pc="268435840" symbol="notifyScanResult"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="7" lineNum="115" parent="globals/ThingyDelegate" pc="268435842" symbol="notifyScanResult"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="8" lineNum="97" parent="globals/ThingyDelegate" pc="268435862" symbol="onCharacteristicWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="8" lineNum="101" parent="globals/ThingyDelegate" pc="268435866" symbol="onCharacteristicWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="8" lineNum="102" parent="globals/ThingyDelegate" pc="268435876" symbol="onCharacteristicWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="8" lineNum="103" parent="globals/ThingyDelegate" pc="268435883" symbol="onCharacteristicWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="8" lineNum="104" parent="globals/ThingyDelegate" pc="268435897" symbol="onCharacteristicWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="9" lineNum="82" parent="globals/ThingyDelegate" pc="268435923" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="9" lineNum="86" parent="globals/ThingyDelegate" pc="268435927" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="9" lineNum="87" parent="globals/ThingyDelegate" pc="268435937" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="9" lineNum="88" parent="globals/ThingyDelegate" pc="268435944" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="9" lineNum="89" parent="globals/ThingyDelegate" pc="268435958" symbol="onConnectedStateChanged"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="10" lineNum="126" parent="globals/ThingyDelegate" pc="268435982" symbol="notifyCharWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="10" lineNum="127" parent="globals/ThingyDelegate" pc="268435984" symbol="notifyCharWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="11" lineNum="145" parent="globals/ThingyDelegate" pc="268436004" symbol="&lt;globals/ThingyDelegate/&lt;&gt;contains&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="11" lineNum="146" parent="globals/ThingyDelegate" pc="268436008" symbol="&lt;globals/ThingyDelegate/&lt;&gt;contains&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="11" lineNum="147" parent="globals/ThingyDelegate" pc="268436028" symbol="&lt;globals/ThingyDelegate/&lt;&gt;contains&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="11" lineNum="148" parent="globals/ThingyDelegate" pc="268436044" symbol="&lt;globals/ThingyDelegate/&lt;&gt;contains&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="11" lineNum="152" parent="globals/ThingyDelegate" pc="268436063" symbol="&lt;globals/ThingyDelegate/&lt;&gt;contains&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="12" lineNum="71" parent="globals/ThingyDelegate" pc="268436066" symbol="&lt;globals/ThingyDelegate/&lt;&gt;processPairing&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="12" lineNum="72" parent="globals/ThingyDelegate" pc="268436070" symbol="&lt;globals/ThingyDelegate/&lt;&gt;processPairing&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="12" lineNum="73" parent="globals/ThingyDelegate" pc="268436080" symbol="&lt;globals/ThingyDelegate/&lt;&gt;processPairing&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="12" lineNum="74" parent="globals/ThingyDelegate" pc="268436087" symbol="&lt;globals/ThingyDelegate/&lt;&gt;processPairing&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="12" lineNum="75" parent="globals/ThingyDelegate" pc="268436101" symbol="&lt;globals/ThingyDelegate/&lt;&gt;processPairing&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="13" lineNum="132" parent="globals/ThingyDelegate" pc="268436125" symbol="&lt;globals/ThingyDelegate/&lt;&gt;broadcastScanResult&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="13" lineNum="133" parent="globals/ThingyDelegate" pc="268436129" symbol="&lt;globals/ThingyDelegate/&lt;&gt;broadcastScanResult&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="13" lineNum="134" parent="globals/ThingyDelegate" pc="268436139" symbol="&lt;globals/ThingyDelegate/&lt;&gt;broadcastScanResult&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="13" lineNum="135" parent="globals/ThingyDelegate" pc="268436146" symbol="&lt;globals/ThingyDelegate/&lt;&gt;broadcastScanResult&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="13" lineNum="136" parent="globals/ThingyDelegate" pc="268436160" symbol="&lt;globals/ThingyDelegate/&lt;&gt;broadcastScanResult&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="14" lineNum="19" parent="globals/ThingyDelegate" pc="268436184" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="14" lineNum="20" parent="globals/ThingyDelegate" pc="268436186" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="14" lineNum="21" parent="globals/ThingyDelegate" pc="268436204" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="26" parent="globals/ThingyDelegate" pc="268436215" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="27" parent="globals/ThingyDelegate" pc="268436219" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="28" parent="globals/ThingyDelegate" pc="268436222" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="30" parent="globals/ThingyDelegate" pc="268436229" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="37" parent="globals/ThingyDelegate" pc="268436249" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="38" parent="globals/ThingyDelegate" pc="268436290" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="42" parent="globals/ThingyDelegate" pc="268436303" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="44" parent="globals/ThingyDelegate" pc="268436316" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="45" parent="globals/ThingyDelegate" pc="268436320" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="46" parent="globals/ThingyDelegate" pc="268436340" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="48" parent="globals/ThingyDelegate" pc="268436353" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="49" parent="globals/ThingyDelegate" pc="268436372" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="53" parent="globals/ThingyDelegate" pc="268436392" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="55" parent="globals/ThingyDelegate" pc="268436397" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="56" parent="globals/ThingyDelegate" pc="268436405" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="57" parent="globals/ThingyDelegate" pc="268436409" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="64" parent="globals/ThingyDelegate" pc="268436429" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ThingyDelegate.mc" id="15" lineNum="65" parent="globals/ThingyDelegate" pc="268436436" symbol="onScanResults"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" id="16" lineNum="12" parent="globals/ABSView" pc="268436451" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" id="17" lineNum="26" parent="globals/ABSView" pc="268436470" symbol="compute"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" id="17" lineNum="30" parent="globals/ABSView" pc="268436472" symbol="compute"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" id="18" lineNum="17" parent="globals/ABSView" pc="268436506" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" id="18" lineNum="18" parent="globals/ABSView" pc="268436508" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" id="18" lineNum="19" parent="globals/ABSView" pc="268436526" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSView.mc" id="18" lineNum="20" parent="globals/ABSView" pc="268436539" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="19" lineNum="47" parent="globals/DeviceManager" pc="268436550" symbol="procScanResult"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="19" lineNum="49" parent="globals/DeviceManager" pc="268436552" symbol="procScanResult"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="19" lineNum="50" parent="globals/DeviceManager" pc="268436572" symbol="procScanResult"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="19" lineNum="51" parent="globals/DeviceManager" pc="268436593" symbol="procScanResult"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="20" lineNum="37" parent="globals/DeviceManager" pc="268436619" symbol="start"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="20" lineNum="38" parent="globals/DeviceManager" pc="268436621" symbol="start"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="21" lineNum="88" parent="globals/DeviceManager" pc="268436643" symbol="playSample"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="21" lineNum="89" parent="globals/DeviceManager" pc="268436645" symbol="playSample"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="21" lineNum="90" parent="globals/DeviceManager" pc="268436687" symbol="playSample"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="21" lineNum="93" parent="globals/DeviceManager" pc="268436688" symbol="playSample"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="21" lineNum="94" parent="globals/DeviceManager" pc="268436698" symbol="playSample"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="21" lineNum="95" parent="globals/DeviceManager" pc="268436711" symbol="playSample"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="22" lineNum="41" parent="globals/DeviceManager" pc="268436752" symbol="connected"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="22" lineNum="42" parent="globals/DeviceManager" pc="268436754" symbol="connected"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="23" lineNum="72" parent="globals/DeviceManager" pc="268436765" symbol="procCharWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="23" lineNum="76" parent="globals/DeviceManager" pc="268436767" symbol="procCharWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="23" lineNum="78" parent="globals/DeviceManager" pc="268436809" symbol="procCharWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="23" lineNum="79" parent="globals/DeviceManager" pc="268436831" symbol="procCharWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="23" lineNum="80" parent="globals/DeviceManager" pc="268436841" symbol="procCharWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="23" lineNum="81" parent="globals/DeviceManager" pc="268436854" symbol="procCharWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="23" lineNum="82" parent="globals/DeviceManager" pc="268436876" symbol="procCharWrite"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="24" lineNum="23" parent="globals/DeviceManager" pc="268436887" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="24" lineNum="27" parent="globals/DeviceManager" pc="268436889" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="24" lineNum="29" parent="globals/DeviceManager" pc="268436898" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="24" lineNum="30" parent="globals/DeviceManager" pc="268436912" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="24" lineNum="31" parent="globals/DeviceManager" pc="268436926" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="24" lineNum="33" parent="globals/DeviceManager" pc="268436940" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="25" lineNum="57" parent="globals/DeviceManager" pc="268436951" symbol="procConnection"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="25" lineNum="58" parent="globals/DeviceManager" pc="268436953" symbol="procConnection"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="25" lineNum="59" parent="globals/DeviceManager" pc="268436983" symbol="procConnection"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="25" lineNum="60" parent="globals/DeviceManager" pc="268436993" symbol="procConnection"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="25" lineNum="63" parent="globals/DeviceManager" pc="268437006" symbol="procConnection"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="25" lineNum="64" parent="globals/DeviceManager" pc="268437015" symbol="procConnection"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="25" lineNum="65" parent="globals/DeviceManager" pc="268437025" symbol="procConnection"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="26" lineNum="100" parent="globals/DeviceManager" pc="268437047" symbol="&lt;globals/DeviceManager/&lt;&gt;startSoundControl&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="26" lineNum="101" parent="globals/DeviceManager" pc="268437049" symbol="&lt;globals/DeviceManager/&lt;&gt;startSoundControl&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="26" lineNum="115" parent="globals/DeviceManager" pc="268437070" symbol="&lt;globals/DeviceManager/&lt;&gt;startSoundControl&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="26" lineNum="116" parent="globals/DeviceManager" pc="268437080" symbol="&lt;globals/DeviceManager/&lt;&gt;startSoundControl&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/DeviceManager.mc" id="26" lineNum="117" parent="globals/DeviceManager" pc="268437093" symbol="&lt;globals/DeviceManager/&lt;&gt;startSoundControl&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="27" lineNum="15" parent="globals/ABSApp" pc="268437163" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="28" lineNum="27" parent="globals/ABSApp" pc="268437182" symbol="onStart"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="28" lineNum="28" parent="globals/ABSApp" pc="268437184" symbol="onStart"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="28" lineNum="29" parent="globals/ABSApp" pc="268437218" symbol="onStart"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="28" lineNum="30" parent="globals/ABSApp" pc="268437260" symbol="onStart"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="28" lineNum="35" parent="globals/ABSApp" pc="268437310" symbol="onStart"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="28" lineNum="36" parent="globals/ABSApp" pc="268437334" symbol="onStart"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="28" lineNum="37" parent="globals/ABSApp" pc="268437352" symbol="onStart"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="29" lineNum="50" parent="globals/ABSApp" pc="268437371" symbol="getInitialView"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="29" lineNum="51" parent="globals/ABSApp" pc="268437373" symbol="getInitialView"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="29" lineNum="52" parent="globals/ABSApp" pc="268437386" symbol="getInitialView"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="29" lineNum="54" parent="globals/ABSApp" pc="268437435" symbol="getInitialView"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="30" lineNum="21" parent="globals/ABSApp" pc="268437459" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="30" lineNum="22" parent="globals/ABSApp" pc="268437461" symbol="initialize"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="31" lineNum="42" parent="globals/ABSApp" pc="268437480" symbol="onStop"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="31" lineNum="43" parent="globals/ABSApp" pc="268437482" symbol="onStop"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="31" lineNum="44" parent="globals/ABSApp" pc="268437491" symbol="onStop"/>
+        <entry filename="/Users/kent/Downloads/NordicThingy52CoinCollector/source/ABSApp.mc" id="31" lineNum="45" parent="globals/ABSApp" pc="268437500" symbol="onStop"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="28" method="true" symbol="notifyCharWrite"/>
+        <entry field="true" id="49" symbol="&lt;globals/ABSApp/&lt;&gt;_profileManager&gt;"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="7" module="true" symbol="globals/Rez/Menus"/>
+        <entry field="true" id="37" symbol="&lt;globals/DeviceManager/&lt;&gt;_profileManager&gt;"/>
+        <entry field="true" id="23" symbol="&lt;globals/ThingyDelegate/&lt;&gt;_onConnection&gt;"/>
+        <entry id="9" object="true" symbol="ABSApp"/>
+        <entry id="43" method="true" symbol="procCharWrite"/>
+        <entry id="31" method="true" symbol="&lt;globals/ThingyDelegate/&lt;&gt;processPairing&gt;"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="18" symbol="&lt;globals/ProfileManager/&lt;&gt;_dataSendingProfileDef&gt;"/>
+        <entry id="8391256" method="true" symbol="onScanResults"/>
+        <entry id="27" method="true" symbol="&lt;globals/ThingyDelegate/&lt;&gt;contains&gt;"/>
+        <entry id="44" method="true" symbol="procConnection"/>
+        <entry field="true" id="51" symbol="AppName"/>
+        <entry id="8" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry id="8388631" module="true" symbol="Activity"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="8391340" symbol="descriptors"/>
+        <entry id="46" method="true" symbol="&lt;globals/DeviceManager/&lt;&gt;startSoundControl&gt;"/>
+        <entry field="true" id="35" symbol="&lt;globals/DeviceManager/&lt;&gt;_connected&gt;"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="8391258" method="true" symbol="onConnectedStateChanged"/>
+        <entry id="12" object="true" symbol="ProfileManager"/>
+        <entry id="21" module="true" symbol="Menus"/>
+        <entry field="true" id="15" symbol="DATA_RECEIVING_CHARACTERISTIC"/>
+        <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+        <entry field="true" id="39" symbol="&lt;globals/DeviceManager/&lt;&gt;_soundService&gt;"/>
+        <entry id="8389137" method="true" symbol="compute"/>
+        <entry field="true" id="17" symbol="DATA_SENDING_SERVICE"/>
+        <entry id="13" object="true" symbol="ThingyDelegate"/>
+        <entry id="5" module="true" symbol="globals/Rez/JsonData"/>
+        <entry field="true" id="33" symbol="&lt;globals/DeviceManager/&lt;&gt;_config&gt;"/>
+        <entry id="8391335" symbol="writeType"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="10" object="true" symbol="ABSView"/>
+        <entry field="true" id="34" symbol="&lt;globals/DeviceManager/&lt;&gt;_configComplete&gt;"/>
+        <entry field="true" id="14" symbol="BROADCAST_SERVICE"/>
+        <entry id="42" method="true" symbol="playSample"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="19" method="true" symbol="registerProfiles"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="41" method="true" symbol="connected"/>
+        <entry field="true" id="22" symbol="&lt;globals/ThingyDelegate/&lt;&gt;_onCharWrite&gt;"/>
+        <entry id="26" method="true" symbol="&lt;globals/ThingyDelegate/&lt;&gt;broadcastScanResult&gt;"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry field="true" id="50" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="30" method="true" symbol="notifyScanResult"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8391334" symbol="uuid"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry field="true" id="36" symbol="&lt;globals/DeviceManager/&lt;&gt;_device&gt;"/>
+        <entry id="8391193" module="true" symbol="BluetoothLowEnergy"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry field="true" id="47" symbol="&lt;globals/ABSApp/&lt;&gt;_bleDelegate&gt;"/>
+        <entry field="true" id="38" symbol="&lt;globals/DeviceManager/&lt;&gt;_sampleInProgress&gt;"/>
+        <entry field="true" id="48" symbol="&lt;globals/ABSApp/&lt;&gt;_deviceManager&gt;"/>
+        <entry id="11" object="true" symbol="DeviceManager"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="8391341" symbol="characteristics"/>
+        <entry field="true" id="40" symbol="&lt;globals/DeviceManager/&lt;&gt;_speakerData&gt;"/>
+        <entry field="true" id="16" symbol="DATA_SENDING_CHARACTERISTIC"/>
+        <entry id="20" module="true" symbol="Layouts"/>
+        <entry field="true" id="25" symbol="&lt;globals/ThingyDelegate/&lt;&gt;_profileManager&gt;"/>
+        <entry id="8388698" method="true" symbol="start"/>
+        <entry id="8391260" method="true" symbol="onCharacteristicWrite"/>
+        <entry id="4" module="true" symbol="globals/Rez/Fonts"/>
+        <entry id="29" method="true" symbol="notifyConnection"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry field="true" id="32" symbol="&lt;globals/ABSView/&lt;&gt;_deviceManager&gt;"/>
+        <entry id="45" method="true" symbol="procScanResult"/>
+        <entry field="true" id="24" symbol="&lt;globals/ThingyDelegate/&lt;&gt;_onScanResult&gt;"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435839" name="manager" stackId="1" startPc="268435818"/>
+        <entry arg="true" endPc="268435861" name="manager" stackId="1" startPc="268435840"/>
+        <entry arg="true" endPc="268435922" name="characteristic" stackId="1" startPc="268435862"/>
+        <entry arg="true" endPc="268435922" name="status" stackId="2" startPc="268435862"/>
+        <entry endPc="268435921" name="onCharWrite" stackId="3" startPc="268435866"/>
+        <entry arg="true" endPc="268435981" name="device" stackId="1" startPc="268435923"/>
+        <entry arg="true" endPc="268435981" name="state" stackId="2" startPc="268435923"/>
+        <entry endPc="268435980" name="onConnection" stackId="3" startPc="268435927"/>
+        <entry arg="true" endPc="268436003" name="manager" stackId="1" startPc="268435982"/>
+        <entry arg="true" endPc="268436065" name="iter" stackId="1" startPc="268436004"/>
+        <entry arg="true" endPc="268436065" name="obj" stackId="2" startPc="268436004"/>
+        <entry endPc="268436062" name="uuid" stackId="3" startPc="268436028"/>
+        <entry arg="true" endPc="268436124" name="scanResult" stackId="1" startPc="268436066"/>
+        <entry endPc="268436123" name="onScanResult" stackId="2" startPc="268436070"/>
+        <entry arg="true" endPc="268436183" name="scanResult" stackId="1" startPc="268436125"/>
+        <entry endPc="268436182" name="onScanResult" stackId="2" startPc="268436129"/>
+        <entry arg="true" endPc="268436214" name="profileManager" stackId="1" startPc="268436184"/>
+        <entry arg="true" endPc="268436450" name="scanResults" stackId="1" startPc="268436215"/>
+        <entry endPc="268436449" name="maxRssiResult" stackId="2" startPc="268436219"/>
+        <entry endPc="268436449" name="maxRssi" stackId="3" startPc="268436219"/>
+        <entry endPc="268436428" name="result" stackId="4" startPc="268436249"/>
+        <entry endPc="268436412" name="uuids" stackId="5" startPc="268436290"/>
+        <entry endPc="268436412" name="rssi" stackId="6" startPc="268436290"/>
+        <entry endPc="268436412" name="hasAbsolutSweatBroadcast" stackId="7" startPc="268436290"/>
+        <entry endPc="268436391" name="uuid" stackId="8" startPc="268436340"/>
+        <entry endPc="268436375" name="uuidString" stackId="9" startPc="268436340"/>
+        <entry arg="true" endPc="268436505" name="info" stackId="1" startPc="268436470"/>
+        <entry arg="true" endPc="268436549" name="deviceManager" stackId="1" startPc="268436506"/>
+        <entry arg="true" endPc="268436618" name="scanResult" stackId="1" startPc="268436550"/>
+        <entry arg="true" endPc="268436751" name="sampleId" stackId="1" startPc="268436643"/>
+        <entry arg="true" endPc="268436886" name="char" stackId="1" startPc="268436765"/>
+        <entry arg="true" endPc="268436886" name="status" stackId="2" startPc="268436765"/>
+        <entry arg="true" endPc="268436950" name="bleDelegate" stackId="1" startPc="268436887"/>
+        <entry arg="true" endPc="268436950" name="profileManager" stackId="2" startPc="268436887"/>
+        <entry arg="true" endPc="268437046" name="device" stackId="1" startPc="268436951"/>
+        <entry arg="true" endPc="268437370" name="state" stackId="1" startPc="268437182"/>
+        <entry arg="true" endPc="268437509" name="state" stackId="1" startPc="268437480"/>
+    </localVars>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/ProfileManager" offset="174" parentId="globals" symbolId="ProfileManager" type="class"/>
+        <dataEntry label="globals/Rez" offset="269" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/ThingyDelegate" offset="348" parentId="globals" symbolId="ThingyDelegate" type="class"/>
+        <dataEntry label="globals/ABSView" offset="499" parentId="globals" symbolId="ABSView" type="class"/>
+        <dataEntry label="globals/DeviceManager" offset="562" parentId="globals" symbolId="DeviceManager" type="class"/>
+        <dataEntry label="globals/ABSApp" offset="729" parentId="globals" symbolId="ABSApp" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="824" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="863" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/Menus" offset="894" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry label="globals/Rez/Fonts" offset="925" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="956" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/Rez/JsonData" offset="995" parentId="Rez" symbolId="JsonData" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435747" name="&lt;init&gt;" parent="ProfileManager" startPc="268435457">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435774" name="registerProfiles" parent="ProfileManager" startPc="268435748">
+            <documentation>
+                <![CDATA[<div class="description"> Register the bluetooth profile<br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="ProfileManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435798" name="&lt;init&gt;" parent="Rez" startPc="268435775">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435817" name="&lt;init&gt;" parent="ThingyDelegate" startPc="268435799">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435839" name="notifyConnection" parent="ThingyDelegate" startPc="268435818">
+            <param id="manager"/>
+            <documentation>
+                <![CDATA[<div class="description"> Store a new manager to manage device connections<br/> <div class="param"> manager The manager for devices</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435861" name="notifyScanResult" parent="ThingyDelegate" startPc="268435840">
+            <param id="manager"/>
+            <documentation>
+                <![CDATA[<div class="description"> Store a new manager to manage scan results<br/> <div class="param"> manager The manager of the scan results</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435922" name="onCharacteristicWrite" parent="ThingyDelegate" startPc="268435862">
+            <param id="characteristic"/>
+            <param id="status"/>
+            <documentation>
+                <![CDATA[<div class="description"> Handle the completion of a write operation on a characteristic<br/> <div class="param"> characteristic The characteristic that was written</div><br/> <div class="param"> status The BluetoothLowEnergy status indicating the result of the operation</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435981" name="onConnectedStateChanged" parent="ThingyDelegate" startPc="268435923">
+            <param id="device"/>
+            <param id="state"/>
+            <documentation>
+                <![CDATA[<div class="description"> Handle pairing and connecting to a device<br/> <div class="param"> device The device state that was changed</div><br/> <div class="param"> state The state of the connection</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436003" name="notifyCharWrite" parent="ThingyDelegate" startPc="268435982">
+            <param id="manager"/>
+            <documentation>
+                <![CDATA[<div class="description"> Store a new manager to handle characteristic writes<br/> <div class="param"> manager The manager for characteristics</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268436065" name="&lt;globals/ThingyDelegate/&lt;&gt;contains&gt;" parent="ThingyDelegate" startPc="268436004">
+            <param id="iter"/>
+            <param id="obj"/>
+            <documentation>
+                <![CDATA[<div class="description"> Get whether the iterator contains a specific uuid<br/> <div class="param"> iter Iterator of uuid objects</div><br/> <div class="param"> obj Uuid to search for</div><br/> <div class="returns">Returns  true if object found, false otherwise</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268436124" name="&lt;globals/ThingyDelegate/&lt;&gt;processPairing&gt;" parent="ThingyDelegate" startPc="268436066">
+            <param id="scanResult"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268436183" name="&lt;globals/ThingyDelegate/&lt;&gt;broadcastScanResult&gt;" parent="ThingyDelegate" startPc="268436125">
+            <param id="scanResult"/>
+            <documentation>
+                <![CDATA[<div class="description"> Broadcast a new scan result<br/> <div class="param"> scanResult The new scan result</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436214" name="initialize" parent="ThingyDelegate" startPc="268436184">
+            <param id="profileManager"/>
+            <documentation>
+                <![CDATA[<div class="description"> Constructor<br/> <div class="param"> profileManager The profile manager</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436450" name="onScanResults" parent="ThingyDelegate" startPc="268436215">
+            <param id="scanResults"/>
+            <documentation>
+                <![CDATA[<div class="description"> Handle new Scan Results being received<br/> <div class="param"> scanResults An iterator of new scan result objects</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436469" name="&lt;init&gt;" parent="ABSView" startPc="268436451">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436505" name="compute" parent="ABSView" startPc="268436470">
+            <param id="info"/>
+            <documentation>
+                <![CDATA[<div class="description"> Play the sample every two seconds<br/> <div class="param"> info The updated Activity.Info object</div><br/> <div class="returns">Returns  Value to display in the data field</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436549" name="initialize" parent="ABSView" startPc="268436506">
+            <param id="deviceManager"/>
+            <documentation>
+                <![CDATA[<div class="description"> Set the label of the data field here<br/> <div class="param"> deviceManager The device manager</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="DeviceManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436618" name="procScanResult" parent="DeviceManager" startPc="268436550">
+            <param id="scanResult"/>
+            <documentation>
+                <![CDATA[<div class="description"> Process scan result<br/> <div class="param"> scanResult The scan result</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436642" name="start" parent="DeviceManager" startPc="268436619">
+            <documentation>
+                <![CDATA[<div class="description"> Start BLE scanning<br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436751" name="playSample" parent="DeviceManager" startPc="268436643">
+            <param id="sampleId"/>
+            <documentation>
+                <![CDATA[<div class="description"> Play the sample sound<br/> <div class="param"> sampleId Identifier of the sample</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436764" name="connected" parent="DeviceManager" startPc="268436752">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436886" name="procCharWrite" parent="DeviceManager" startPc="268436765">
+            <param id="char"/>
+            <param id="status"/>
+            <documentation>
+                <![CDATA[<div class="description"> Handle the completion of a write operation on a characteristic<br/> <div class="param"> char The characteristic that was written</div><br/> <div class="param"> status The result of the operation</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436950" name="initialize" parent="DeviceManager" startPc="268436887">
+            <param id="bleDelegate"/>
+            <param id="profileManager"/>
+            <documentation>
+                <![CDATA[<div class="description"> Constructor<br/> <div class="param"> bleDelegate The BLE delegate</div><br/> <div class="param"> profileManager The profile manager</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437046" name="procConnection" parent="DeviceManager" startPc="268436951">
+            <param id="device"/>
+            <documentation>
+                <![CDATA[<div class="description"> Process a new device connection<br/> <div class="param"> device The device that was connected</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268437162" name="&lt;globals/DeviceManager/&lt;&gt;startSoundControl&gt;" parent="DeviceManager" startPc="268437047">
+            <documentation>
+                <![CDATA[<div class="description"> Start the sound control on the device<br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437181" name="&lt;init&gt;" parent="ABSApp" startPc="268437163">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437370" name="onStart" parent="ABSApp" startPc="268437182">
+            <param id="state"/>
+            <documentation>
+                <![CDATA[<div class="description"> Handle app startup<br/> <div class="param"> state Startup arguments</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437458" name="getInitialView" parent="ABSApp" startPc="268437371">
+            <documentation>
+                <![CDATA[<div class="description"> Return the initial view for the app<br/> <div class="returns">Returns  Array [View]</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437479" name="initialize" parent="ABSApp" startPc="268437459">
+            <documentation>
+                <![CDATA[<div class="description"> Constructor<br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437509" name="onStop" parent="ABSApp" startPc="268437480">
+            <param id="state"/>
+            <documentation>
+                <![CDATA[<div class="description"> Handle app shutdown<br/> <div class="param"> state Shutdown arguments</div><br/></div>]]>
+            </documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Menus">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Fonts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="JsonData">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>
