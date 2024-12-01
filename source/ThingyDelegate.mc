@@ -10,14 +10,16 @@ import Toybox.Lang;
 class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
   private var _profileManager as ProfileManager;
 
-  private var _onScanResult as WeakReference?;
-  private var _onConnection as WeakReference?;
-  private var _onCharWrite as WeakReference?;
+  private var _view as ABSView;
 
   //! Constructor
   //! @param profileManager The profile manager
-  public function initialize(profileManager as ProfileManager) {
+  public function initialize(
+    view as ABSView,
+    profileManager as ProfileManager
+  ) {
     BleDelegate.initialize();
+    _view = view;
     _profileManager = profileManager;
   }
 
@@ -47,6 +49,7 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
           // Log.Debug.logMessage("AbsolutSweatDelegate", "uuids:" + uuidString);
           if ("0000190A-0000-1000-8000-00805F9B34FB".equals(uuidString)) {
             hasAbsolutSweatBroadcast = true;
+            _view.message = "Found ABS";
           }
         }
 
@@ -68,73 +71,57 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
     // Log.Debug.logMessage("AbsolutSweatDelegate", "Exiting onScanResults");
   }
 
+  //! Start BLE scanning
+  public function start() as Void {
+    BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_SCANNING);
+    _view.message = "scanning";
+  }
+
   private function processPairing(scanResult as ScanResult) as Void {
-    var onScanResult = _onScanResult;
-    if (onScanResult != null) {
-      if (onScanResult.stillAlive()) {
-        (onScanResult.get() as DeviceManager).procScanResult(scanResult);
-      }
+    if (scanResult.getRssi() > -50) {
+      // BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_OFF);
+      BluetoothLowEnergy.pairDevice(scanResult);
+      _view.message = "pairing";
     }
   }
   //! Handle pairing and connecting to a device
   //! @param device The device state that was changed
   //! @param state The state of the connection
-  public function onConnectedStateChanged(
-    device as Device,
-    state as ConnectionState
-  ) as Void {
-    var onConnection = _onConnection;
-    if (onConnection != null) {
-      if (onConnection.stillAlive()) {
-        (onConnection.get() as DeviceManager).procConnection(device);
-      }
+  public function onConnectedStateChanged(device, state) {
+    if (state == BluetoothLowEnergy.CONNECTION_STATE_CONNECTED) {
+      BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_OFF);
+      _view.message = "connected";
+    } else {
+      _view.message = "disconnected";
+      BluetoothLowEnergy.unpairDevice(device);
+      BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_SCANNING);
     }
+    WatchUi.requestUpdate();
   }
 
   //! Handle the completion of a write operation on a characteristic
   //! @param characteristic The characteristic that was written
   //! @param status The BluetoothLowEnergy status indicating the result of the operation
   public function onCharacteristicWrite(
-    characteristic as Characteristic,
+    char as Characteristic,
     status as Status
   ) as Void {
-    var onCharWrite = _onCharWrite;
-    if (onCharWrite != null) {
-      if (onCharWrite.stillAlive()) {
-        (onCharWrite.get() as DeviceManager).procCharWrite(
-          characteristic,
-          status
-        );
-      }
-    }
-  }
+    System.println("Proc Write: (" + char.getUuid() + ") - " + status);
 
-  //! Store a new manager to manage scan results
-  //! @param manager The manager of the scan results
-  public function notifyScanResult(manager as DeviceManager) as Void {
-    _onScanResult = manager.weak();
-  }
-
-  //! Store a new manager to manage device connections
-  //! @param manager The manager for devices
-  public function notifyConnection(manager as DeviceManager) as Void {
-    _onConnection = manager.weak();
-  }
-
-  //! Store a new manager to handle characteristic writes
-  //! @param manager The manager for characteristics
-  public function notifyCharWrite(manager as DeviceManager) as Void {
-    _onCharWrite = manager.weak();
+    // if (char.equals(_config)) {
+    //   _configComplete = true;
+    //   _sampleInProgress = false;
+    // } else if (char.equals(_speakerData)) {
+    //   _sampleInProgress = false;
+    // }
   }
 
   //! Broadcast a new scan result
   //! @param scanResult The new scan result
   private function broadcastScanResult(scanResult as ScanResult) as Void {
-    var onScanResult = _onScanResult;
-    if (onScanResult != null) {
-      if (onScanResult.stillAlive()) {
-        (onScanResult.get() as DeviceManager).procScanResult(scanResult);
-      }
+    if (scanResult.getRssi() > -50) {
+      BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_OFF);
+      BluetoothLowEnergy.pairDevice(scanResult);
     }
   }
 

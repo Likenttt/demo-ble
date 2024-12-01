@@ -29,11 +29,9 @@ class ProfileManager {
     :characteristics => [
       {
         :uuid => DATA_SENDING_CHARACTERISTIC,
-        :descriptors => [BluetoothLowEnergy.cccdUuid()],
       },
       {
         :uuid => DATA_RECEIVING_CHARACTERISTIC,
-        :descriptors => [BluetoothLowEnergy.cccdUuid()],
       },
     ],
   };

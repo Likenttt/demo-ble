@@ -12,10 +12,10 @@ import Toybox.WatchUi;
 //! This data field app uses the Sound Service of the Nordic Thingy:52.
 //! The field will pair with the first Thingy it encounters and will
 //! play a Coin Collection sample every 2 seconds.
-class ABSApp extends Application.AppBase {
+class AbsApp extends Application.AppBase {
   private var _profileManager as ProfileManager?;
   private var _bleDelegate as ThingyDelegate?;
-  private var _deviceManager as DeviceManager?;
+  private var view;
 
   //! Constructor
   public function initialize() {
@@ -26,21 +26,21 @@ class ABSApp extends Application.AppBase {
   //! @param state Startup arguments
   public function onStart(state as Dictionary?) as Void {
     _profileManager = new $.ProfileManager();
-    _bleDelegate = new $.ThingyDelegate(_profileManager as ProfileManager);
-    _deviceManager = new $.DeviceManager(
-      _bleDelegate as ThingyDelegate,
+    view = new $.ABSView();
+
+    _bleDelegate = new $.ThingyDelegate(
+      view as ABSView,
       _profileManager as ProfileManager
     );
 
     BluetoothLowEnergy.setDelegate(_bleDelegate as ThingyDelegate);
     (_profileManager as ProfileManager).registerProfiles();
-    (_deviceManager as DeviceManager).start();
+    _bleDelegate.start();
   }
 
   //! Handle app shutdown
   //! @param state Shutdown arguments
   public function onStop(state as Dictionary?) as Void {
-    _deviceManager = null;
     _bleDelegate = null;
     _profileManager = null;
   }
@@ -48,9 +48,6 @@ class ABSApp extends Application.AppBase {
   //! Return the initial view for the app
   //! @return Array [View]
   public function getInitialView() as Array<Views> {
-    if (_deviceManager != null) {
-      return [new $.ABSView(_deviceManager)];
-    }
-    System.error("DeviceManager uninitialized.");
+    return [view];
   }
 }

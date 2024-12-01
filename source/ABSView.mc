@@ -10,14 +10,13 @@ import Toybox.Time;
 import Toybox.WatchUi;
 
 class ABSView extends WatchUi.SimpleDataField {
-  private var _deviceManager as DeviceManager;
+  public var message as String;
 
   //! Set the label of the data field here
   //! @param deviceManager The device manager
-  public function initialize(deviceManager as DeviceManager) {
+  public function initialize() {
     SimpleDataField.initialize();
-    label = "Status";
-    _deviceManager = deviceManager;
+    label = "Message";
   }
 
   //! Play the sample every two seconds
@@ -27,6 +26,6 @@ class ABSView extends WatchUi.SimpleDataField {
     info as Info
   ) as Numeric or Duration or String or Null {
     // See Activity.Info in the documentation for available information.
-    return _deviceManager.connected() ? "Connected" : "Disconnected";
+    return message;
   }
 }
